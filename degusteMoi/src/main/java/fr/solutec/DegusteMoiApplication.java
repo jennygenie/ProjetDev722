@@ -8,7 +8,11 @@ public class DegusteMoiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DegusteMoiApplication.class, args);
+
+		System.out.println("le projet t'as peur");
+
 		System.out.println("lancement terminé");
+
 	}
 
 }
