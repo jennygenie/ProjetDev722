@@ -27,12 +27,12 @@ public class DegusteMoiApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		User u1 = new User(null, "Siwertz", "Marius", "siwertzm", "123");
+		/*User u1 = new User(null, "Siwertz", "Marius", "siwertzm", "123");
 		User u2 = new User(null, "Bardin", "Marion", "mbardin", "456");
 		User u3 = new User(null, "Scoliege", "Paul", "poloscolo", "789");
 		userRepos.save(u1);
 		userRepos.save(u2);
-		userRepos.save(u3);
+		userRepos.save(u3);*/
 	}
 
 }
