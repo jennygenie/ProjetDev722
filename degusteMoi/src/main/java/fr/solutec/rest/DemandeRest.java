@@ -3,6 +3,7 @@ package fr.solutec.rest;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -47,6 +48,16 @@ public class DemandeRest {
 			Demande d = od.get();
 			d.setValide(true);
 			demanderepos.save(d);
+			return true;
+		}
+		return false;
+	}
+	
+	@DeleteMapping ("demande/reject/{id}")
+	private boolean rejectDemande(@PathVariable Long id) {
+		Optional<Demande> od = demanderepos.findById(id);
+		if (od.isPresent()) {
+			demanderepos.deleteById(id);
 			return true;
 		}
 		return false;
