@@ -9,7 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity @Data @NoArgsConstructor @AllArgsConstructor
-public class Recettes {
+public class Recette {
 	
 	@Id @GeneratedValue
 	private Long id;

@@ -1,5 +1,7 @@
 package fr.solutec;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -27,12 +29,9 @@ public class DegusteMoiApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		/*User u1 = new User(null, "Siwertz", "Marius", "siwertzm", "123");
-		User u2 = new User(null, "Bardin", "Marion", "mbardin", "456");
-		User u3 = new User(null, "Scoliege", "Paul", "poloscolo", "789");
-		userRepos.save(u1);
-		userRepos.save(u2);
-		userRepos.save(u3);*/
+		
 	}
 
+	
+	
 }
