@@ -37,13 +37,24 @@ public class DegusteMoiApplication implements CommandLineRunner {
 		/*User u1 = new User(null, "Siwertz", "Marius", "siwertzm", "123");
 		User u2 = new User(null, "Bardin", "Marion", "mbardin", "456");
 		User u3 = new User(null, "Scoliege", "Paul", "poloscolo", "789");
+		User u4 = new User(null, "aa", "aa", "aa", "aa");
 		userRepos.save(u1);
 		userRepos.save(u2);
 		userRepos.save(u3);
+		userRepos.save(u4);
 		
 		
+<<<<<<< HEAD
 		Demande d1 = new Demande(null, u1, u2, false);
 		demandeRepos.save(d1);*/
+=======
+		Demande d1 = new Demande(null, u1, u2, true);
+		Demande d2 = new Demande(null, u2, u3, true);
+		Demande d3 = new Demande(null, u2, u4, true);
+		demandeRepos.save(d1);
+		demandeRepos.save(d2);
+		demandeRepos.save(d3);
+>>>>>>> friend_system
 		
 	}
 
