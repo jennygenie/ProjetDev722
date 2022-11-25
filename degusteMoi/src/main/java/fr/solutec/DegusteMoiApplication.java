@@ -34,7 +34,7 @@ public class DegusteMoiApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		/*User u1 = new User(null, "Siwertz", "Marius", "siwertzm", "123");
+		User u1 = new User(null, "Siwertz", "Marius", "siwertzm", "123");
 		User u2 = new User(null, "Bardin", "Marion", "mbardin", "456");
 		User u3 = new User(null, "Scoliege", "Paul", "poloscolo", "789");
 		User u4 = new User(null, "aa", "aa", "aa", "aa");
@@ -43,7 +43,7 @@ public class DegusteMoiApplication implements CommandLineRunner {
 		userRepos.save(u3);
 		userRepos.save(u4);
 		
-		
+		/*
 
 		Demande d1 = new Demande(null, u1, u2, false);
 		demandeRepos.save(d1);
