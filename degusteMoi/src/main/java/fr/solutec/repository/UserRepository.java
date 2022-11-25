@@ -15,6 +15,9 @@ public interface UserRepository extends CrudRepository<User, Long> {
 	@Query(value = "SELECT u From User u WHERE u.login = ?1 AND u.mdp = ?2")
 	public Optional<User> getByConnexion(String login, String mdp);
 	
+	@Query(value = "SELECT u From User u WHERE u.login like ?1%")
+	public Iterable<User> getBylogin(String login);
+	
 	
 
 }
