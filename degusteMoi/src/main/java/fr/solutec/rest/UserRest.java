@@ -46,11 +46,11 @@ public class UserRest {
 			List<User> result = new ArrayList<>();
 			if (u.isPresent()) {
 				User user = u.get();
-				Iterable<Demande> demandes = demandeRepos.findByEnvoyeur(user);
+				Iterable<Demande> demandes = demandeRepos.findAllByEnvoyeur(user);
 				for (Demande demande : demandes) {
 					result.add(demande.getReceveur());
 				}
-				Iterable<Demande> demandes2 = demandeRepos.findByReceveur(user);
+				Iterable<Demande> demandes2 = demandeRepos.findAllByReceveur(user);
 				for (Demande demande : demandes2) {
 					result.add(demande.getEnvoyeur());
 				}
