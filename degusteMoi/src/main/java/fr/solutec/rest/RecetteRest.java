@@ -26,6 +26,13 @@ public class RecetteRest {
 		return recetteRepos.getBySubTitle(sub);
 	}
 	
+	@GetMapping("recette/titre/{titre}")
+	public Iterable<Recette> getbytitre(@PathVariable String titre){
+		return recetteRepos.getByTitle(titre);
+		
+		
+	}
+	
 	
 	
 
