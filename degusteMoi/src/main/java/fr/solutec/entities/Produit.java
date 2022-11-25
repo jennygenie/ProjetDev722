@@ -8,10 +8,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity @AllArgsConstructor @NoArgsConstructor @Data
-public class Vin {
-	
-	@Id @GeneratedValue
-	private Long id;
+@Entity @NoArgsConstructor @AllArgsConstructor @Data
+public class Produit {
 
+	@Id @GeneratedValue
+	Long id;
 }

@@ -10,8 +10,9 @@ import fr.solutec.entities.User;
 public interface DemandeRepository extends CrudRepository<Demande, Long>{
 	
 	public Optional<Demande> findById (Long id);
-	public Iterable<Demande> findByEnvoyeur (User u);
-	public Iterable<Demande> findByReceveur (User u);
+	public Iterable<Demande> findAllByEnvoyeur (User u);
+	public Iterable<Demande> findAllByReceveur (User u);
+	public Iterable<Demande> findAllByEnvoyeurAndValide(User u, boolean v);
 	
 
 }

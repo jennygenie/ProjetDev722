@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.solutec.entities.Demande;
+import fr.solutec.entities.User;
 import fr.solutec.repository.DemandeRepository;
 
 @RestController
@@ -27,12 +28,12 @@ public class DemandeRest {
 	
 	@PostMapping("demande")
 	private boolean createDemande(@RequestBody Demande d) {
-		for (Demande demande : demanderepos.findByEnvoyeur(d.getEnvoyeur())) {
+		for (Demande demande : demanderepos.findAllByEnvoyeur(d.getEnvoyeur())) {
 			if (demande.getReceveur().equals(d.getReceveur())) {
 				return false;
 			}
 		}
-		for (Demande demande2 : demanderepos.findByReceveur(d.getEnvoyeur())) {
+		for (Demande demande2 : demanderepos.findAllByReceveur(d.getEnvoyeur())) {
 			if (demande2.getEnvoyeur().equals(d.getReceveur())) {
 				return false;
 			}
@@ -61,5 +62,10 @@ public class DemandeRest {
 			return true;
 		}
 		return false;
+	}
+	
+	@GetMapping ("demande/nonvalide/{u}")
+	private Iterable<Demande> getDemandes (@PathVariable User u) {
+		return demanderepos.findAllByEnvoyeurAndValide(u, false);
 	}
 }

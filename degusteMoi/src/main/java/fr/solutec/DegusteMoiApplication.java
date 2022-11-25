@@ -43,17 +43,6 @@ public class DegusteMoiApplication implements CommandLineRunner {
 		userRepos.save(u3);
 		userRepos.save(u4);*/
 		
-		/*
-
-		Demande d1 = new Demande(null, u1, u2, false);
-		demandeRepos.save(d1);
-
-		Demande d1 = new Demande(null, u1, u2, true);
-		Demande d2 = new Demande(null, u2, u3, true);
-		Demande d3 = new Demande(null, u2, u4, true);
-		demandeRepos.save(d1);
-		demandeRepos.save(d2);
-		demandeRepos.save(d3);*/
 		
 	}
 
