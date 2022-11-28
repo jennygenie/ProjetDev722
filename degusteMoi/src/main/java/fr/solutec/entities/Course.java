@@ -13,13 +13,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity @NoArgsConstructor @AllArgsConstructor @Data
-public class Participation {
+public class Course {
 	
 	@Id @GeneratedValue
 	private Long id;
 	@OneToOne @OnDelete(action = OnDeleteAction.CASCADE)
 	private User user;
 	@OneToOne @OnDelete(action = OnDeleteAction.CASCADE)
-	private Repas repas;
-	private boolean accept;
+	private Produit produit;
+	private Long quantity;
 }
+

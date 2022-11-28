@@ -26,6 +26,16 @@ public class DemandeRest {
 		return demanderepos.findAll();
 	}
 	
+	@GetMapping("demande/envoyeur/{user}")
+	private Iterable<Demande> getAllByEnvoyeur(@PathVariable User user) {
+		return demanderepos.findAllByEnvoyeur(user);
+	}
+	
+	@GetMapping("demande/receveur/{user}")
+	private Iterable<Demande> getAllByReceveur(@PathVariable User user) {
+		return demanderepos.findAllByReceveur(user);
+	}
+	
 	@PostMapping("demande")
 	private boolean createDemande(@RequestBody Demande d) {
 		for (Demande demande : demanderepos.findAllByEnvoyeur(d.getEnvoyeur())) {

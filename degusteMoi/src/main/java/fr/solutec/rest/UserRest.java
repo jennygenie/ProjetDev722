@@ -7,8 +7,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -79,6 +81,24 @@ public class UserRest {
 				}
 			}
 			return result;
+		}
+		
+		@PutMapping("user/update/{id}")
+		public boolean putUser (@RequestBody User newUser, @PathVariable Long id) {
+			Optional<User> user = userRepos.findById(id);
+			
+			if (user.isPresent()) {
+				User u = user.get();
+				u.setNom(newUser.getNom());
+				u.setPrenom(newUser.getPrenom());
+				u.setLogin(newUser.getLogin());
+				u.setMdp(newUser.getMdp());
+				u.setEmail(newUser.getEmail());
+				u.setTel(newUser.getTel());
+				return true;
+			}
+			return false;
+			
 		}
 		
 		

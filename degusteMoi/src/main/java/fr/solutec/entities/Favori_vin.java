@@ -12,14 +12,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity @NoArgsConstructor @AllArgsConstructor @Data
-public class Participation {
-	
+@Entity @AllArgsConstructor @NoArgsConstructor @Data
+public class Favori_vin {
 	@Id @GeneratedValue
-	private Long id;
+	Long id;
 	@OneToOne @OnDelete(action = OnDeleteAction.CASCADE)
 	private User user;
 	@OneToOne @OnDelete(action = OnDeleteAction.CASCADE)
-	private Repas repas;
-	private boolean accept;
+	private Vin vin;
 }
+
