@@ -95,6 +95,7 @@ public class UserRest {
 				u.setMdp(newUser.getMdp());
 				u.setEmail(newUser.getEmail());
 				u.setTel(newUser.getTel());
+				userRepos.save(u);
 				return true;
 			}
 			return false;
