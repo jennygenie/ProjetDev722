@@ -27,5 +27,7 @@ public class User {
 	@Column(unique = true)
 	private String login;
 	private String mdp;
+	private String email;
+	private String tel;
 	
 }
