@@ -95,6 +95,9 @@ public class UserRest {
 				u.setMdp(newUser.getMdp());
 				u.setEmail(newUser.getEmail());
 				u.setTel(newUser.getTel());
+				u.setRegime(newUser.getRegime());
+				u.setAllergie(newUser.getAllergie());
+				userRepos.save(u);
 				return true;
 			}
 			return false;

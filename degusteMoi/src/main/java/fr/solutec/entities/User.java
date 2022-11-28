@@ -29,5 +29,7 @@ public class User {
 	private String mdp;
 	private String email;
 	private String tel;
+	private String regime;
+	private String allergie;
 	
 }

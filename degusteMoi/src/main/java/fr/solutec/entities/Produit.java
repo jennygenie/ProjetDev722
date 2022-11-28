@@ -12,5 +12,6 @@ import lombok.NoArgsConstructor;
 public class Produit {
 
 	@Id @GeneratedValue
-	Long id;
+	private Long id;
+	private String nom;
 }
