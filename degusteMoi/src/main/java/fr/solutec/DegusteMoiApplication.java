@@ -44,6 +44,7 @@ public class DegusteMoiApplication implements CommandLineRunner {
 		userRepos.save(u4);*/
 		
 		
+		
 	}
 
 	
