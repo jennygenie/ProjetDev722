@@ -13,5 +13,14 @@ public class Vin {
 	
 	@Id @GeneratedValue
 	private Long id;
+	private String titre;
+	private String sous_titre;
+	private String description;
+	private String type;
+	private String region;
+	private String lien_image;
+	private String lien_description;
+	
+	
 
 }
