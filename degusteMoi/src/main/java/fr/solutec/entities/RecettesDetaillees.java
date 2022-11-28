@@ -9,10 +9,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity @Data @NoArgsConstructor @AllArgsConstructor
-public class RecettesDetaillé {
+public class RecettesDetaillees {
 	
 	@Id @GeneratedValue
-	private Long id;
+	private Long id_recette;
 	private String titre;
 	private String temps_preparation;
 	private String temps_cuisson;

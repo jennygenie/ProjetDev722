@@ -32,6 +32,12 @@ public class UserRest {
 			return userRepos.findAll();
 		}
 		
+		@GetMapping("user/{login}")
+		public Iterable<User> getByLogin(@PathVariable String login){
+			return userRepos.getBylogin(login);
+			
+		}
+		
 		@PostMapping("login")
 		public Optional<User> getByLoginAndId(@RequestBody User u){
 			return userRepos.findByLoginAndMdp(u.getLogin(), u.getMdp());
