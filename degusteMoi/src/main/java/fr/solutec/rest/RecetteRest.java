@@ -29,6 +29,11 @@ public class RecetteRest {
 		return recetteRepos.getBySubTitle(sub);
 	}
 	
+	@GetMapping("recette/id/{id}")
+	public Recette getbyId(@PathVariable Long id){
+		return recetteRepos.getById(id);
+	}
+	
 	@GetMapping("recette/titre/{titre}")
 	public Iterable<Recette> getbytitre(@PathVariable String titre){
 		return recetteRepos.getByTitle(titre);
