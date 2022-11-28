@@ -19,7 +19,7 @@ public class Vin {
 	private String type;
 	private String region;
 	private String lien_image;
-	private String lien_description;
+	private String lien_descri;
 	
 	
 
