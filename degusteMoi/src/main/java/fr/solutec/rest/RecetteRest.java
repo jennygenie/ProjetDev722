@@ -1,6 +1,9 @@
 package fr.solutec.rest;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,10 +32,21 @@ public class RecetteRest {
 	@GetMapping("recette/titre/{titre}")
 	public Iterable<Recette> getbytitre(@PathVariable String titre){
 		return recetteRepos.getByTitle(titre);
-		
-		
 	}
 	
+	@GetMapping("recette/random")
+	public Recette randomRecette () {
+		Iterable<Recette> recettes = recetteRepos.findAll();
+		List<Recette> list = new ArrayList<>();
+		int length = 0;
+		for (Recette recette : recettes) {
+			list.add(recette);
+			length += 1;
+		}
+		double rand = Math.floor(Math.random()*length+1);
+		return list.get((int) rand);
+		
+	}
 	
 	
 
