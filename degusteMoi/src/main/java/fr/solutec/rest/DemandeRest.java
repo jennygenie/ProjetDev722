@@ -14,12 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 import fr.solutec.entities.Demande;
 import fr.solutec.entities.User;
 import fr.solutec.repository.DemandeRepository;
+import fr.solutec.repository.UserRepository;
 
 @RestController
 public class DemandeRest {
 	
 	@Autowired
 	private DemandeRepository demanderepos;
+	@Autowired
+	private UserRepository userRepos;
 	
 	@GetMapping("demande")
 	private Iterable<Demande> getAll() {
@@ -52,14 +55,16 @@ public class DemandeRest {
 		return true;
 	}
 	
-	@PatchMapping("demande/accept/{id}")
-	private boolean acceptDemande(@PathVariable Long id) {
+	@PatchMapping("demande/accept/{u}/{id}")
+	private boolean acceptDemande(@PathVariable User u, @PathVariable Long id) {
 		Optional<Demande> od = demanderepos.findById(id);
 		if (od.isPresent()) {
 			Demande d = od.get();
-			d.setValide(true);
-			demanderepos.save(d);
-			return true;
+			if (d.getReceveur().equals(u)) {
+				d.setValide(true);
+				demanderepos.save(d);
+				return true;
+			}
 		}
 		return false;
 	}
