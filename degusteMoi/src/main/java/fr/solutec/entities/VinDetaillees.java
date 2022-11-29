@@ -7,20 +7,17 @@ import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-@Entity @AllArgsConstructor @NoArgsConstructor @Data
-public class Vin {
-	
+@Entity @Data @NoArgsConstructor @AllArgsConstructor
+public class VinDetaillees {
 	@Id @GeneratedValue
-	private Long id;
+	private Long id_vin;
 	private String titre;
-	private String sous_titre;
-	private String description;
-	private String type;
 	private String region;
-	private String lien_image;
-	private String lien_descri;
-	
-	
+	private String description;
+	private String note;
+	private String nb_bouteilles;
+	private String elevage;
+	private String garde;
+	private String temp_degust;
 
 }

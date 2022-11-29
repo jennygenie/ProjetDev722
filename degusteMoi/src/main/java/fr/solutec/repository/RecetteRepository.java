@@ -14,6 +14,9 @@ public interface RecetteRepository extends CrudRepository<Recette, Long>{
 	@Query(value = "SELECT r From Recette r WHERE r.titre like %?1% ")
 	public Iterable<Recette> getByTitle(String titre);
 	
+	@Query(value = "SELECT r From Recette r WHERE r.id= ?1 ")
+	public Recette getById(Long id);
+	
 
 	
 
