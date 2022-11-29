@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.solutec.entities.Recette;
 import fr.solutec.entities.Vin;
 import fr.solutec.repository.VinRepository;
 
@@ -22,8 +23,19 @@ public class VinRest {
 		return vinRepos.findAll();
 	}
 	
-	@GetMapping("vin/{id}")
+	@GetMapping("vins/{id}")
 	public Optional<Vin> getVinById (@PathVariable Long id) {
 		return vinRepos.findById(id);
+	}
+	
+	@GetMapping("vin/region/{reg}")
+	public Iterable<Vin> getbyRegion(@PathVariable String reg){
+		return vinRepos.getByRegion(reg);
+		
+	}
+	
+	@GetMapping("vin/{titre}")
+	public Iterable<Vin> getbytitre(@PathVariable String titre){
+		return vinRepos.getByTitle(titre);
 	}
 }
