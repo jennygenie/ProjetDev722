@@ -23,6 +23,7 @@ public class DegusteMoiApplication implements CommandLineRunner {
 	
 	@Autowired
 	private UserRepository userRepos;
+	@Autowired
 	private ProduitRepository pRepos;
 	@Autowired
 	private UserRepository uRepos;
@@ -46,7 +47,7 @@ public class DegusteMoiApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		/*
+		
 		User u1 = new User(null, "FARI", "Giraf", "FG", "girafarig", null, null, null, null);
 		User u2 = new User(null, "LESBONZAFER", "Fredo", "FrLBZ", "Cat", null, null, null, null);
 		User u3 = new User(null, "SKYWALKER", "Anakin", "JediMaster2156", "master", null, null, null, null);
@@ -66,7 +67,7 @@ public class DegusteMoiApplication implements CommandLineRunner {
 		dRepos.save(d1);
 		dRepos.save(d2);
 		rRepos.save(r1);
-		partRepos.save(pp1);*/
+		partRepos.save(pp1);
 		
 	}
 

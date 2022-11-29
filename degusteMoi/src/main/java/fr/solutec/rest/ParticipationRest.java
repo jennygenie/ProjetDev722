@@ -54,6 +54,11 @@ public class ParticipationRest {
 		return prepos.findByUserAndAccept(user, true);
 	}
 	
+	@GetMapping("participation/invite/{user}")
+	public Iterable<Participation> getnotAccepted (@PathVariable User user) {
+		return prepos.findByUserAndAccept(user, false);
+	}
+	
 	@PatchMapping("participation/accept/{id}")
 	public boolean acceptParticipation (@PathVariable Long id) {
 		Optional<Participation> part = prepos.findById(id);
