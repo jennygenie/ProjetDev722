@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.solutec.entities.Demande;
@@ -62,6 +64,11 @@ public class ParticipationRest {
 			return true;
 		}
 		return false;
+	}
+	
+	@PostMapping("participation")
+	public Participation createParticipation (@RequestBody Participation p) {
+		return prepos.save(p);
 	}
 	
 	@DeleteMapping("participation/reject/{id}")

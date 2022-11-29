@@ -23,4 +23,5 @@ public class Repas {
 	private User hote;
 	private Date date;
 	private String adresse;
+	private String theme;
 }
